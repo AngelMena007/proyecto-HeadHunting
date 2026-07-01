@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro HeadHunting</title>
+    <link rel="stylesheet" href="../assets/css/estilosr.css" />
+  </head>
+  <body>
+    <header class="header-principal">
+      <div class="espaciador-izquierda"></div>
+      <div class="seccion-registro">
+        <div class="barra-registro">REGISTRO</div>
+      </div>
+      <div class="logo-area-derecha">
+        <div class="texto-logo-mini"></div>
+        <a href="index.html"
+          ><img src="../assets/imgs/Logo.png" alt="Logo" class="img-mini"
+        /></a>
+      </div>
+    </header>
+
+    <div class="linea-azul-separadora"></div>
+
+    <main>
+      <form class="main-container" id="registro-form">
+        <input
+          type="radio"
+          name="pasos"
+          id="paso1"
+          checked
+          style="display: none"
+        />
+        <input type="radio" name="pasos" id="paso2" style="display: none" />
+
+        <div class="seccion-form" id="contenido-paso1">
+          <h2 class="titulo-seccion">1. Información Personal</h2>
+          <div class="grid-campos">
+            <div class="campo">
+              <label for="reg-nombre">Nombre completo:</label>
+              <input
+                type="text"
+                id="reg-nombre"
+                placeholder="Ej: Sebastian Villagomez"
+                required
+              />
+            </div>
+            <div class="campo">
+              <label for="reg-correo">Correo electrónico:</label>
+              <input type="email" id="reg-correo" required />
+            </div>
+
+            <div class="campo">
+              <label for="reg-password">Nueva contraseña:</label>
+              <input
+                type="password"
+                id="reg-password"
+                placeholder="Maximo 8 caracteres"
+                required
+                style="
+                  border-radius: 8px;
+                  border: 1px solid #e2e8f0;
+                  padding: 10px;
+                  width: 95%;
+                  outline: none;
+                  max-lines: 8 required;
+                "
+              />
+            </div>
+
+            <div class="campo">
+              <label for="reg-telefono">Número de teléfono:</label>
+              <input type="text" id="reg-telefono" required />
+            </div>
+            <div class="campo">
+              <label for="reg-ciudad">Ciudad/País:</label>
+              <input type="text" id="reg-ciudad" placeholder="Quito/Ecuador" />
+            </div>
+          </div>
+
+          <div class="btn-container">
+            <label for="paso2" class="btn-fake" id="btn-siguiente-validar"
+              >Siguiente</label
+            >
+          </div>
+        </div>
+
+        <div class="seccion-form" id="contenido-paso2">
+          <h2 class="titulo-seccion">2. Perfil Profesional</h2>
+          <div class="grid-campos">
+            <div class="campo">
+              <label>Tipo de Perfil:</label>
+              <div class="opciones-radio">
+                <input type="radio" name="perfil" value="Administrativo" />
+                Administrativo<br />
+                <input type="radio" name="perfil" value="Empleador" />
+                Empleador<br />
+                <input type="radio" name="perfil" value="Empleado" /> Empleado
+              </div>
+            </div>
+            <div class="campo">
+              <label for="reg-habilidades">Habilidades:</label>
+              <input
+                type="text"
+                id="reg-habilidades"
+                placeholder="Ej: C++, Java, Linux"
+              />
+            </div>
+            <div class="campo">
+              <label for="archivo-cv">C.V / Fotografía:</label>
+              <div class="cv-placeholder">
+                <input type="file" id="archivo-cv" style="display: none" />
+                <label for="archivo-cv" class="upload-area">
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png"
+                    width="60"
+                  />
+                  <span class="upload-text">Haz clic para subir archivo</span>
+                </label>
+              </div>
+            </div>
+            <div class="campo">
+              <label>Nivel de estudio:</label>
+              <div class="opciones-radio">
+                <input type="radio" name="estudio" value="Escuela" />
+                Escuela<br />
+                <input type="radio" name="estudio" value="Colegio" />
+                Colegio<br />
+                <input type="radio" name="estudio" value="Universidad" />
+                Universidad
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-container">
+            <label for="paso1" class="btn-regresar">← Volver</label>
+            <button type="submit" class="btn-enviar" id="btn-finalizar">
+              Finalizar Registro
+            </button>
+          </div>
+        </div>
+      </form>
+      <script src="../assets/js/Registro.js"></script>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+
+
+/* 1. VARIABLES Y BASE */
+:root {
+    --azul-oscuro: #1e293b;
+    --azul-brillante: #2563eb;
+    --azul-hover: #1d4ed8;
+    --gris-borde: #e2e8f0;
+    --gris-fondo: #f1f5f9;
+    --gris-texto: #64748b;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--gris-fondo);
+    color: var(--negro);
+}
+.header-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+    padding: 10px 5%;
+    max-width: 850px; 
+    margin: 0 auto;
+    position: relative;      
+    min-height: 80px;        
+}
+
+.img-mini {
+    height: 70px;            
+    width: auto;
+    object-fit: contain;
+    position: absolute;     
+    right: 0;               
+    top: 50%;                
+    transform: translateY(-50%); 
+}
+
+.barra-registro {
+    background-color: var(--azul-brillante);
+    color: white;
+    padding: 8px 30px;
+    border-radius: 50px;
+    font-size: 20px;          
+}
+
+.linea-azul-separadora {
+    height: 3px;
+    background-color: var(--azul-brillante);
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+.main-container {
+    max-width: 650px;        
+    margin: 10px auto;        
+    padding:15px 50px 15px 50px;            
+    background: var(--blanco);
+    border-radius: 20px;
+}
+
+.titulo-seccion {
+    text-align: center;       
+    margin-bottom: 30px;
+}
+
+.seccion-form {
+    display: none;
+}
+
+#paso1:checked ~ #contenido-paso1,
+#paso2:checked ~ #contenido-paso2 {
+    display: block;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.grid-campos {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    max-width: 450px;         
+    margin: 0 auto 30px auto; 
+}
+
+.titulo-seccion {
+    font-size: 1.4rem; 
+    font-weight: 800;
+    margin-bottom: 15px; 
+    color: var(--azul-oscuro);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-weight: 600;
+    margin-bottom: 5px; 
+    font-size: 0.85rem;
+}
+
+input[type="text"], 
+input[type="email"] {
+    padding: 10px 12px; 
+    border: 1.5px solid var(--gris-borde);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--azul-brillante);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.cv-placeholder {
+    background-color: #f8fafc;
+    border: 2px dashed var(--gris-borde);
+    border-radius: 10px;
+    padding: 15px; 
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-text {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: var(--azul-brillante);
+    font-weight: 700;
+}
+.btn-container {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-fake, .btn-enviar {
+    background-color: var(--azul-brillante) ; 
+    color: white ;
+    padding: 12px 30px; 
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+.btn-fake {
+    margin-bottom: 30px;
+}
+.btn-enviar {
+    margin-left: auto; 
+    display: block;
+}
+
+.btn-container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+}
+.btn-fake:hover, .btn-enviar:hover {
+    background-color: var(--azul-hover);
+    transform: translateY(-2px);
+}
+
+.btn-regresar {
+    color: var(--gris-texto);
+    cursor: pointer;
+    margin-right: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.opciones-radio {
+    background: #f8fafc;
+    padding: 10px 12px; 
+    border-radius: 8px;
+    border: 1px solid var(--gris-borde);
+    line-height: 1.4; 
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .grid-campos {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .main-container {
+        padding: 15px;
+        margin: 10px;
+    }
+}

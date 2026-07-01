@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../assets/css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="login-box">
+        <div class="form-container">
+            <h2 class="logo">
+                <img src="../assets/imgs/login.png" width="150px" height="100px">
+            </h2>
+            <form id="login-form">
+                <div class="input-box">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="email" id="login-email" placeholder="Correo Electronico" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="login-password" placeholder="Contraseña" required>
+                </div>
+                <div class="options">
+                    <label>
+                        <input type="checkbox" id="login-remember">Recordarme
+                    </label>
+                    <button type="submit" id="btn-login">Iniciar Sesion</button>
+                </div>
+            </form>
+            <hr>
+            <p class="link">¿No tienes cuenta? <span><a href="registro.html" style="color: black; text-decoration: underline;">Regístrate aquí</a></span></p>
+        </div>
+    </div>
+    <script src="../assets/js/Login.js"></script>
+</body>
+
+</html>

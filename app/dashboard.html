@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="es" data-bs-theme="light">
+  <head>
+    <title>Dashboard - HeadHunting</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/css/styled.css" />
+  </head>
+
+
+  <body>  
+    <button class="btn btn-outline-dark d-md-none position-fixed top-0 start-0 m-3 z-3 shadow-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+      <i class="fa-solid fa-bars fs-4"></i>
+    </button>
+    
+    <div class="d-flex">  
+      <div class="offcanvas-md offcanvas-start d-flex flex-column flex-shrink-0 p-3 bg-white text-dark border-end position-sticky top-0" id="menuLateral" style="width: 280px; height: 100vh">
+        <a href="index.html" class="d-flex flex-column align-items-center justify-content-center text-center my-3 text-decoration-none text-dark">
+          <img src="../assets/imgs/Logo.png" alt="Logo HeadHunting" width="130" height="80" class="mb-2" />
+        </a>
+        <hr class="mt-0" />
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item"><a href="#panel-principal" class="nav-link active">Panel Principal</a></li>
+          <li><a href="#candidatos" class="nav-link text-dark">Candidatos</a></li>
+          <li><a href="#vacantes" class="nav-link text-dark">Vacantes</a></li>
+          <li><a href="#configuracion" class="nav-link text-dark">Configuracion</a></li>
+        </ul>
+        
+
+        <hr />
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+            <img src="https://github.com/mdo.png" width="32" height="32" class="rounded-circle me-2" />
+            <strong>Perfil</strong>
+          </a>
+          <ul class="dropdown-menu shadow">
+            <li>
+              <a class="dropdown-item" href="../index.html" id="enlaceCerrarSesion">Cerrar Sesion</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      
+      <div class="flex-grow-1 p-4 bg-light text-dark" style="min-height: 100vh">
+        <header class="mb-4 pt-5 pt-md-0" id="panel-principal">
+          <h2>Panel Principal</h2>
+          <hr />
+        </header>
+        
+        <main class="servicios" id="servicios">
+          <div class="servicios-container">
+            <div class="servicios-tarjeta">
+              <h2 class="servicios-subtitulo">Total de Candidatos</h2>
+              <div class="servicios-tarjeta-texto-imagen">
+                <h1 class="servicios-texto" id="metricaCandidatos">0</h1>
+                <img src="../assets/imgs/dash1.png" class="servicios-img" />
+              </div>
+              <h2 class="subtitulo2">respecto al mes anterior</h2>
+            </div>
+            
+            <div class="servicios-tarjeta">
+              <h2 class="servicios-subtitulo">Vacantes Directivas</h2>
+              <div class="servicios-tarjeta-texto-imagen">
+                <h1 class="servicios-texto" id="metricaVacantes">0</h1>
+                <img src="../assets/imgs/dash2.png" class="servicios-img" />
+              </div>
+              <h2 class="subtitulo2">Roles Activos</h2>
+            </div>
+            
+            <div class="servicios-tarjeta">
+              <h2 class="servicios-subtitulo">Entrevistas Hoy</h2>
+              <div class="servicios-tarjeta-texto-imagen">
+                <h1 class="servicios-texto">18</h1>
+                <img src="../assets/imgs/dash3.png" class="servicios-img" />
+              </div>
+              <h2 class="subtitulo2">Simulaciones</h2>
+            </div>
+            
+            <div class="servicios-tarjeta">
+              <h2 class="servicios-subtitulo">Colocados Exitosamente</h2>
+              <div class="servicios-tarjeta-texto-imagen">
+                <h1 class="servicios-texto">112</h1>
+                <img src="../assets/imgs/dash4.png" class="servicios-img" />
+              </div>
+              <h2 class="subtitulo2">Tasa de Exito 85%</h2>
+            </div>
+          </div>
+
+
+          
+          <div class="container px-0 mt-4">
+            <div class="table-card">
+              <table class="responsive-table" id="tablaRecientes">
+                <caption>Candidatos Recientes (Últimas 24h)</caption>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Candidato</th>
+                    <th>Area</th>
+                    <th>Correo</th>
+                    <th>Actividad</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </main>
+        
+    
+
+        <div class="container px-0 mt-5" id="candidatos">
+          <h2>Gestion de Candidatos</h2>
+          <hr />
+          <div class="actions-bar">
+            <div class="search-container">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" class="search-input" placeholder="Buscar..." />
+            </div>
+            <button class="btn-create" data-objetivo="modalCandidato">
+              Añadir Candidato
+              <i class="fa-solid fa-plus"></i>
+            </button>    
+          </div>
+          <div class="table-card">
+            <table class="responsive-table" id="tablaCandidatos">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Candidato</th>
+                  <th>Area</th>
+                  <th>Correo</th>
+                  <th>Actividad</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+
+        
+        <div class="container px-0 mt-5" id="vacantes">
+          <h2>Gestion de Vacantes</h2>
+          <hr />
+          <div class="actions-bar">
+            <div class="search-container">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" class="search-input" placeholder="Buscar..." />
+            </div>
+            <button class="btn-create" data-objetivo="modalVacante">
+              Crear Vacante
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+          <div class="table-card">
+            <table class="responsive-table" id="tablaVacantes">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Título</th>
+                  <th>Cliente</th>
+                  <th>Ubicación</th>
+                  <th>Estado</th>
+                  <th>Publicado</th>
+                  <th>Candidatos</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+       
+        
+
+        <div class="container px-0 mt-5" id="configuracion">
+          <h2>Configuracion de Perfil</h2>
+          <hr />
+          <div class="card p-4 shadow-sm mt-4">
+            <form id="formularioConfiguracion">
+              <div class="mb-3">
+                <label class="form-label">Nombre Completo</label>
+                <input type="text" id="configNombre" class="form-control" required />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Correo Electrónico (No modificable)</label>
+                <input type="email" id="configCorreo" class="form-control" disabled />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Nueva Contraseña</label>
+                <input type="password" id="configPassword" class="form-control" placeholder="Dejar en blanco para mantener la actual" />
+              </div>
+              <button type="submit" class="btn btn-primary mt-3">Guardar Cambios</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+    <div class="modal fade" id="modalCandidato">
+      <div class="modal-dialog">
+        <form id="formularioCandidato" class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Candidato</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div> 
+          <div class="modal-body">
+            <input type="hidden" id="candidatoId" />
+            <input type="hidden" id="candidatoFecha" />
+            <input type="text" id="candidatoNombre" class="form-control mb-2" placeholder="Nombre" required />
+            <select id="candidatoArea" class="form-select mb-2">
+              <option>Tecnologia</option>
+              <option>Finanzas</option>
+              <option>RRHH</option>
+            </select>
+            <input type="email" id="candidatoCorreo" class="form-control mb-2" placeholder="Correo" required />
+            <select id="candidatoEstado" class="form-select">
+              <option>Evaluado</option>
+              <option>Entrevistando</option>
+              <option>Colocado</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+
+
+    <div class="modal fade" id="modalVacante">
+      <div class="modal-dialog">
+        <form id="formularioVacante" class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Vacante</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>      
+          <div class="modal-body">
+            <input type="hidden" id="vacanteId" />
+            <input type="hidden" id="vacanteFecha" />
+            <input type="hidden" id="vacantePostulantes" />
+            <input type="text" id="vacanteTitulo" class="form-control mb-2" placeholder="Título" required />
+            <input type="text" id="vacanteCliente" class="form-control mb-2" placeholder="Cliente" required />
+            <input type="text" id="vacanteUbicacion" class="form-control mb-2" placeholder="Ubicación" required />
+            <select id="vacanteEstado" class="form-select">
+              <option>Abierta</option>
+              <option>En Proceso</option>
+              <option>Cerrada</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/Dashboard.js"></script>
+  </body>
+</html>
