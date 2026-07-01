@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const storageDestino = recordarMe ? localStorage : sessionStorage;
                 storageDestino.setItem('sesionActiva', JSON.stringify(usuarioValido));
 
-                window.location.href = "../../app/dashboard.html";
+                window.location.href = "../app/dashboard.html";
             } else {
                 // Alerta nativa en caso de credenciales erróneas
                 alert("Correo o contraseña incorrectos");
