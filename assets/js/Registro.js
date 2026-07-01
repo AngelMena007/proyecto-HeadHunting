@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("¡Registro completado exitosamente!\nYa puedes iniciar sesión con tu correo y la contraseña que acabas de crear.");
 
             // Redireccionar al login
-            window.location.href = "../../auth/login.html";
+            window.location.href = "login.html";
         });
     }
 });
